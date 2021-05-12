@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combate ao COVID</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script type="text/javascript" src="js/js_menu.js"></script>
+    <script type="text/javascript" src="js/info.js"></script>
+    <link rel="stylesheet" href="css/css_menu.css">
+    <link rel="stylesheet" href="css/info.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body onload="dataHora()">
+    <header>
+        <img src="imagens/logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li class="itemMenu"><a href="index.html">Home</a></li>
+                <li class="itemMenu"><a href="info.html">Informações</a></li>
+                <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+                <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+                <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+            </ul>
+        </nav>
+        <div id="horaData">
+            <span id="data"></span>
+            <span id="hora"></span>
+        </div>
+        <div id="acessibilidade">
+            <button id="aumenta">+</button>
+            <button id="diminui">-</button>
+        </div>
+    </header>
+    <main>
+        <h1>Informações sobre o novo Coronavirus</h1><br />
+        <div class="alerta">
+            <div id="effect" class="ui-widget-content ui-corner-all">
+                ATENÇÃO: A imunização só estará completa mediante a segunda dose da vacina, portanto continue seguindo
+                os protocolos mesmo após a primeira dose.
+            </div>
+        </div>
+
+        <div id="cuidado">
+            <a href="#" id="button" class="ui-state-default ui-corner-all">Sim, estou me cuidando!</a>
+        </div>
+
+
+        <div id="folha">
+            <div class="box1">
+                <dl>
+                    <h4>Butatan/Coronavac</h4>
+                    <dd>
+                        <p>A vacina de origem chinesa é feita com o vírus inativado: ele é cultivado e multiplicado numa
+                            cultura de células e depois inativado por meio de calor ou produto químico. Ou seja, o corpo
+                            que recebe a vacina com o vírus —já inativado— começa a gerar os anticorpos necessários no
+                            combate da doença. As células que dão início à resposta imune encontram os vírus inativados
+                            e os capturam, ativando os linfócitos, células especializadas capazes de combater
+                            microrganismos. Os linfócitos produzem anticorpos, que se ligam aos vírus para impedir que
+                            eles infectem nossas células.</p>
+
+                        <p>A eficácia geral da CoronaVac é 50,38%, ou seja, os vacinados têm 50,38% menos risco de
+                            adoecer e, caso pegue covid-19, a vacina oferece 100% de eficácia para não adoecer
+                            gravemente e 78% para prevenir casos leves.</p>
+                        <p>No Brasil A vacina foi criada na China pela farmacêutica Sinovac, mas, no Brasil, a parceria
+                            com transferência de tecnologia foi feita com o Instituto Butantan. Os testes para estudos
+                            clínicos com a CoronaVac começaram em julho de 2020 em oitos estados brasileiros. O estudo
+                            foi realizado com 13.060 voluntários, todos profissionais da saúde e expostos diariamente à
+                            covid-19. A aplicação da vacina começou no dia 17 de janeiro após aprovação emergencial da
+                            Anvisa.</p>
+                    </dd>
+
+
+                    <br />
+                    <dt>
+                        <h4>Oxford/Astrazeca/Fiocruz</h4>
+                    </dt>
+                    <dd>
+                        <p>A vacina produzida pela Universidade de Oxford (Reino Unido) usa uma tecnologia conhecida
+                            como vetor viral não replicante. Por isso, utiliza um "vírus vivo", como um adenovírus (que
+                            causa o resfriado comum), que não tem capacidade de se replicar no organismo humano ou
+                            prejudicar a saúde. Este adenovírus também é modificado por meio de engenharia genética para
+                            passar a carregar em si as instruções para a produção de uma proteína característica do
+                            coronavírus, conhecida como espícula. Ao entrar nas células, o adenovírus faz com que elas
+                            passem a produzir essa proteína e a exiba em sua superfície, o que é detectado pelo sistema
+                            imune, que cria formas de combater o coronavírus e cria uma resposta protetora contra uma
+                            infecção.</p>
+                        <p>A AstraZeneca e a Universidade de Oxford anunciaram dois resultados distintos de eficácia
+                            desta vacina —62% quando aplicada em duas doses completas e 90% com meia dose seguida de
+                            outra completa. A eficácia média, segundo os cientistas responsáveis, é de 70%. No Brasil A
+                            vacina foi criada no Reino Unido em uma parceria entre a Universidade de Oxford e a
+                            farmacêutica AstraZeneca. No Brasil, houve a transferência de tecnologia para
+                            Bio-Manguinhos, a unidade produtora de imunobiológicos da Fiocruz. Voluntários brasileiros
+                            também participaram da fase de testes: foram 10 mil pessoas no total em cinco estados. A
+                            vacina já começou a ser aplicada no Brasil. No dia 12 de março, o imunizante teve o registro
+                            definitivo aprovado.</p>
+                    </dd>
+                    <br />
+                    <dt>
+                        <h4>Pfizer/BioNTech</h4>
+                    </dt>
+                    <dd>
+                        <p>A vacina utiliza a tecnologia chamada de mRNA ou RNA-mensageiro, diferente da CoronaVac ou da
+                            AstraZenca/Oxford, que utilizam o cultivo do vírus em laboratório. Os imunizantes são
+                            criados a partir da replicação de sequências de RNA por meio de engenharia genética, o que
+                            torna o processo mais barato e mais rápido. O RNA mensageiro mimetiza a proteína spike,
+                            específica do vírus Sars-CoV-2, que o auxilia a invadir as células humanas. Essa "cópia", no
+                            entanto, não é nociva como o vírus, mas é suficiente para desencadear uma reação das células
+                            do sistema imunológico, que cria uma defesa robusta no organismo. O imunizante da Pfizer
+                            precisa ser estocado a -75ºC —um dos grandes desafios para os países.</p>
+                        <p>A farmacêutica Pfizer anunciou hoje que sua vacina contra a covid-19, elaborada em parceria
+                            com a empresa alemã BioNTech, é segura e tem 95% de eficácia. Essa é a conclusão final da
+                            terceira fase de testes.</p>
+                        <p>A vacina foi testada em 43,5 mil pessoas de seis países. No Brasil, os testes foram feitos em
+                            São Paulo e Bahia. No dia 23 de fevereiro, o imunizante teve o registro definitivo aprovado
+                            pela Anvisa. Em 19 de março, o governo Bolsonaro assinou contrato de compra de 100 milhões
+                            de doses com o laboratório. A vacina já está sendo aplicada em diversos países do mundo.</p>
+                    </dd>
+                    <br />
+                </dl>
+            </div>
+
+            <div class="box2">
+
+
+                <ul>
+                    <li>Lave suas mãos com frequência. Use sabão e água ou álcool em gel.</li>
+                    <li>Mantenha uma distância segura de pessoas que estiverem tossindo ou espirrando.</li>
+                    <li>Use máscara quando não for possível manter o distanciamento físico.</li>
+                    <li>Evite tocar nos olhos, no nariz ou na boca.</li>
+                    <li>Cubra seu nariz e boca com o braço dobrado ou um lenço ao tossir ou expirar.</li>
+                    <li>Fique em casa se você se sentir indisposto.</li>
+                    <li>Procure atendimento médico se tiver febre, tosse e dificuldade para respirar.</li>
+                </ul>
+                <br />
+            </div>
+            <div class="box3">
+
+
+                <dl>
+                    <dt>
+                    <dd>
+                        <p>Atualmente, o tratamento para casos leves de covid-19 recomendado é muito parecido com o
+                            feito em outras infecções respiratórias causadas por vírus, como a gripe. O médico pode
+                            prescrever remédios para alívio dos sintomas, como analgésicos para as dores e antitérmicos
+                            para controlar a febre.
+                        <p>É importante notarmos que esses medicamentos atuam nos sintomas, e não na causa da
+                            doença!
+                            Além disso, é importante repouso e mais ingestão de líquidos para evitar desidratação. O
+                            médico pode solicitar exames de sangue ou de imagem, como o raio-x, para avaliar a
+                            condição clínica do paciente.
+                        <p>Aqueles com suspeita ou com covid-19 confirmada, assim como as pessoas que moram em
+                            residência, devem ser acompanhados pela equipe de saúde, presencialmente, pelo
+                            telefone ou por aplicativos.<strong>Todos devem realizar isolamento
+                                doméstico.</strong>
+                        <p>O familiar doente deve ficar 10 dias de isolamento contados do início de sintomas
+                            E estar assintomático nas últimas 72 horas;
+                            pessoas que moram com ele - 10 dias desde o último contato com a pessoa
+                            sintomática;
+                        <p>É responsabilidade do médico fornecer atestado quando necessário.</p>
+                    </dd>
+                    <br />
+                    <dt>
+                        <h3>Pode surgir algum medicamento para casos leves?</h3>
+                    </dt>
+                    <dd>
+                        <p>Desde a descoberta do novo coronavírus e a sua rápida transmissão pelo planeta, a ciência
+                            procura um tratamento para covid-19 que seja seguro e eficaz. Atualmente, mais de 150
+                            medicamentos estão em estudo, entre eles antivirais, anti-inflamatórios, anticorpos e
+                            combinações de diferentes medicamentos.
+                        <p>Entretanto, até o momento, não existe um tratamento específico para a infecção pelo
+                            SARS-CoV-2.
+                            Pode ser que a ciência não encontre um tratamento eficaz contra a covid-19. Um dos
+                            avanços mais importantes seriam os medicamentos que diminuem as chances de casos leves
+                            para casos graves ou que diminuem os óbitos pela doença ajudariam a controlar
+                            a pandemia.</p>
+                    </dd>
+                    <br />
+                    <dt>
+                        <h3>Quais medidas tomar para se recuperar bem?</h3>
+                    </dt>
+                    <dd>
+                        As principais medidas a serem realizadas pelos pacientes com a forma leve da doença são:
+                        <ul>
+                            <li>Controlar os sintomas para ter mais conforto;</li>
+                            <li>Seguir as recomendações médicas;</li>
+                            <li>Realizar o isolamento doméstico e o distanciamento físico de forma adequada, reduzindo a
+                                transmissão da doença para pessoas mais vulneráveis.</li>
+                        </ul>
+                        <br />
+                        <p>Para os casos leves, não há um tratamento específico que seja considerado eficaz pela
+                            ciência.</p>
+
+                        <p>Felizmente, a maioria das pessoas se recupera bem dentro de alguns dias apenas com repouso,
+                            hidratação e remédios para aliviar os sintomas.
+                            É importante que pacientes e familiares estejam atentos aos sinais de gravidade, tais como
+                            falta de ar, dor persistente no peito e coloração azulada dos lábios.
+                            Diante de qualquer um desses sinais e sintomas, deve-se procurar atendimento médico
+                            imediatamente.</p>
+
+
+
+                        <p>A maioria das pessoas infectadas pelo novo coronavírus apresenta casos leves de covid-19.
+                            Ainda assim, as medidas de prevenção da transmissão,
+                            como isolamento social e uso de máscaras, são essenciais para o controle da pandemia. Para
+                            os casos leves, devemos seguir as orientações médicas, evitando automedicação e reduzindo as
+                            chances de transmissão da covid-19 para os entes queridos e toda a população. Por fim,
+                            manter-se bem informado é muito importante para combater a pandemia e a desinformação!</p>
+                    </dd>
+
+                </dl>
+
+            </div>
+            <section class="imagem_inicial">
+                <img src="imagens/vacinacontrafome.jpg" id="campanha" style="width: 300px; height: 300px">
+
+                <h4>Governo de São Paulo lança campanha “Vacina Contra a Fome”</h4>
+                <p>O Governador João Doria lançou nesta quarta-feira (31) a campanha “Vacina Contra a Fome”.
+                    Desenvolvida pela Secretaria de Desenvolvimento Social com participação da Secretaria da
+                    Comunicação, a ação convida cada pessoa apta a se vacinar contra a COVID-19 a doar um quilo de
+                    alimento não perecível nos municípios participantes.</p>
+                <p>O objetivo da campanha é beneficiar famílias carentes e com déficit nutricional durante o
+                    enfrentamento da pandemia do coronavírus.</p>
+                <p>“Esse programa incentiva as pessoas que vão se vacinar a doar um quilo de alimento não perecível,
+                    preferencialmente arroz, feijão, macarrão e também leite em pó”, afirmou o Governador. “A
+                    participação daqueles que estão sendo vacinados é absolutamente espontânea. Doa quem pode e quem
+                    quer, mas temos nessa doação um gesto de grandeza e solidariedade para quem mais precisa”, reforçou
+                    Doria.</p>
+                <a href="https://www.youtube.com/watch?v=8bZjO01Qzu0" target="_blank">Confira o vídeo da campanha</a>
+                </p>
+
+
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Érica , Luiza, Marta, Nurya, Thamiris </p><br>
+        <p>Copyright 2021</p>
+    </footer>
+
+</body>
+
+</html>

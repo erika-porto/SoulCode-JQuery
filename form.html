@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combate ao COVID - Cadastro</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="css/css_form.css">
+    <link rel="stylesheet" href="css/css_menu.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+
+</head>
+
+<body onload="dataHora()">
+    <header>
+        <img src="imagens/logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li class="itemMenu"><a href="index.html">Home</a></li>
+                <li class="itemMenu"><a href="info.html">Informações</a></li>
+                <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+                <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+                <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+            </ul>
+        </nav>
+        <div id="horaData">
+            <span id="data"></span>
+            <span id="hora"></span>
+        </div>
+        <div id="acessibilidade">
+            <button id="aumenta">+</button>
+            <button id="diminui">-</button>
+        </div>
+    </header>
+
+    <div id="header2">
+        <ul>
+            <li class="itemMenu"><a href="index.html">Home</a></li>
+            <li class="itemMenu"><a href="info.html">Informações</a>
+                <ul>
+                    <li><a href="info.html"></a>Vacinas</li>
+                    <li><a href="info.html"></a>Protocolos</li>
+                    <li><a href="info.html"></a>Tratamento</li>
+                </ul>
+            </li>
+            <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+            <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+            <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section id="formulario">
+            <h1>CADASTRO</h1>
+
+            <form action="" method="POST">
+                <div id="abas">
+                    <div id="abaPessoal">
+                        <h3>Pessoal</h3>
+                    </div>
+                    <div id="abaSus">
+                        <h3>SUS</h3>
+                    </div>
+                    <div id="abaCovid">
+                        <h3>COVID</h3>
+                    </div>
+                </div>
+                <div id="pessoal">
+                    <div>
+                        <label class="etiqueta" for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required />
+                    </div>
+                    <br>
+                    <div>
+                        <label class="etiqueta" for="cpf">CPF</label>
+                        <input onblur="VerificaCPF(this)" type="text" placeholder="Insira apenas os números" id="cpf" />
+                    </div>
+                    <br>
+                    <div>
+                        <label class="etiqueta" for="sexo">Sexo</label>
+                        <select name="sexo" id="sex">
+                            <option value="0" selected disabled>Selecione</option>
+                            <option value="1">Feminino</option>
+                            <option value="2">Masculino</option>
+                            <option value="3">Não informado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <div></div>
+                        <label class="etiqueta" for="gestante">Gestante:</label>
+                        <input type="checkbox" name="gestante" id="gestante" disabled>
+                    </div>
+                    <br>
+                    <div class="etiqueta">
+                        <label for="dataNasc">Data de Nascimento</label>
+                        <input class="progresso" type="number" min="1" max="31" name="diaNasc" id="diaNasc"
+                            placeholder="Dia">
+                        <select name="mes" id="mesNasc">
+                            <option value="" selected>Mês</option>
+                            <option value="1">JAN</option>
+                            <option value="2">FEV</option>
+                            <option value="3">MAR</option>
+                            <option value="4">ABR</option>
+                            <option value="5">MAI</option>
+                            <option value="6">JUN</option>
+                            <option value="7">JUL</option>
+                            <option value="8">AGO</option>
+                            <option value="9">SET</option>
+                            <option value="10">OUT</option>
+                            <option value="11">NOV</option>
+                            <option value="12">DEZ</option>
+                        </select>
+                        <input type="number" min="1891" max="2021" name="anoNasc" id="anoNasc" placeholder="Ano"
+                            onblur="idade(this)">
+
+                    </div>
+                    <br />
+                    
+
+                    <div>
+                        <label class="etiqueta" for="etnia">Etnia</label>
+                        <select id="etnia">
+                            <option value="selecione" disabled selected>Selecione</option>
+                            <option value="1">Amarelo</option>
+                            <option value="2">Branco</option>
+                            <option value="3">Indígena</option>
+                            <option value="4">Pardo</option>
+                            <option value="5">Preto</option>
+                            <option value="ni">Não informado</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div id="botaoSus">
+                        <h3>Próximo</h3>
+                    </div>
+                </div>
+
+                <div id="sus">
+                    <div>
+                        <label class="etiqueta" for="cartaoSus">Cartão SUS</label>
+                        <input type="text" id="cartaoSus" />
+                    </div>
+                    <br>
+                    <div id="vacinas">
+                        <label id="labelVacinas" for="vacina">Vacinas</label>
+
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="bcg">
+                            <label for="bcg">BCG</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="dtp">
+                            <label for="dtp">DTP</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="dTap">
+                            <label for="dTap">dTap (adulto)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="dupla">
+                            <label for="dupla">Dupla (adulto)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="amarela">
+                            <label for="amarela">Febre Amarela</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="hepa">
+                            <label for="hepa">Hepatite A</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="hepb">
+                            <label for="hepa">Hepatite B</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="hpv">
+                            <label for="hpv">HPV</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="influ">
+                            <label for="influ">Influenza</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="macwy">
+                            <label for="macwy">Menigocócica ACWY</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="mac">
+                            <label for="mac">Menigocócica C</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="penta">
+                            <label for="penta">Pentavalente </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="p10">
+                            <label for="p10">Pneumocócica 10</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="tetra">
+                            <label for="tetra">Tetra Viral</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="tri">
+                            <label for="tri">Tríplice Viral</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="vari">
+                            <label for="vari">Varicela monovalente</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="vop">
+                            <label for="vop">VOP</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="vorh">
+                            <label for="vorh">VORH Rotavírus</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="vac" name="vacina" valor="vip">
+                            <label for="vip">VIP</label>
+                        </div>
+
+                        <label id="labelVacinas" for="vacina">Vacina COVID</label>
+                        <select id="vacinaCovid">
+                            <option value="selecione" disabled selected>Selecione</option>
+                            <option value="vac1">ButanVac</option>
+                            <option value="vac2">CoronaVac</option>
+                            <option value="vac3">Oxford-Astrazeneca</option>
+                            <option value="vac4">Nenhuma</option>
+                        </select>
+                        <div id="dose">
+                            <input type="checkbox" class="vac" name="vacina" valor="covid1">
+                            <label for="covid1">1ª dose</label>
+                            <input type="checkbox" class="vac" name="vacina" valor="covid2">
+                            <label for="covid2">2º dose</label>
+                        </div>
+                        <div id="botaoCovid">
+                            <h3>Próximo</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="covid">
+                    <div>
+                        <label class="etiqueta" for="prof"><strong>Profissão</strong></label>
+                        <select id="prof">
+                            <option value="selecione" disabled selected>Selecione</option>
+                            <option value="1">Trabalhador de saúde</option>
+                            <option value="2">Profissional de segurança pública</option>
+                            <option value="3">Administração penitenciária</option>
+                            <option value="4">Profissional da educação</option>
+                            <option value="5">Metroviários</option>
+                            <option value="6">Ferroviários</option>
+                            <option value="7">Motoristas de ônibus</option>
+                            <option value="8">Cobradores de ônibus</option>
+                            <option value="9">Outros</option>
+
+                        </select>
+                    </div>
+
+                    <br>
+                    <div id="imc">
+                        <label id="labelImc" for="imc">Cálculo IMC</label>
+                        <p>Digite o peso e altura para realizar o cálculo do IMC e verficar se é uma pessoa com
+                            obesidade</p>
+                        <label id="imcPeso" for="peso">Peso:</label>
+                        <input type="number" id="peso" />
+
+                        <label id="imcAltura" for="altura">Altura:</label>
+                        <input type="number" id="altura" />
+
+                        <button id="botaoImc" type="button" onclick="imc()">Calcular</button>
+
+                        <div id="resultadoImc">Resultado: </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label id="labelComorbidades" for="comorbidade">Comorbidades</label>
+
+                        <div id="dialog" title="Lista de Comorbidades">
+                            <p>Anemia falciforme</p>
+                            <p>Arritmias cardíacas</p>
+                            <p>Cardiopatia hipertensiva</p>
+                            <p>Cardiopatias congênitas</p>
+                            <p>Cirrose hepática</p>
+                            <p>Diabetes mellitus</p>
+                            <p>Dispositivos cardíacos</p>
+                            <p>Doenças Cardiovasculares</p>
+                            <p>Doença Cerebrovascular</p>
+                            <p>Doença da Aorta</p>
+                            <p>Doença renal crônica</p>
+                            <p>Hipertensão arterial – estágio 3</p>
+                            <p>Hipertensão arterial resistente (HAR) </p>
+                            <p>Hipertensão pulmonar</p>
+                            <p>Imunossuprimidos</p>
+                            <p>Insuficiência cardíaca</p>
+                            <p>Miocardiopatias</p>
+                            <p>Pneumopatias crônicas graves</p>
+                            <p>Síndromes coronarianas</p>
+                            <p>Valvopatias</p>
+
+                        </div>
+                        <button id="dialog-link" class="ui-button ui-corner-all ui-widget">
+                            <span class="ui-icon ui-icon-newwin"></span>Lista de Comorbidades
+                        </button>
+
+                        <div id="marcar">
+                            <p>Possui alguma das comorbidades da lista</p>
+                            <input type="checkbox" name="comorbidades" id="comorbidadades" value="sim">
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <br>
+                <!-- <div id="progressbar">
+
+                </div> -->
+
+                <div id="agoraVai">
+                    <div id="div1"></div>
+                    <div id="div2"></div>
+                    <div id="div3"></div>
+                    <div id="div4"></div>
+                    <div id="div5"></div>
+                    <div id="div6"></div>
+                    <div id="div7"></div>
+                    <div id="div8"></div>
+                    <div id="div9"></div>
+                    <div id="div10"></div>
+                </div>
+
+                <div id="final">
+                    <button id="cadastrar" type="button" onclick="cadastro()">Cadastrar</button>
+                </div>
+                <div>
+                    <p id="dados">Preencha o formulário para mostrar a fase da Vacinação</p>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Érica , Luiza, Marta, Nurya, Thamiris </p><br>
+        <p>Copyright 2021</p>
+    </footer>
+
+    <script language="javascript">
+        window.addEventListener('resize', function () { //QUANDO A TELA REDIMENSIONA
+            $(document).ready(function () {//Exibindo menu conforme resolução do monitor
+                var tam = $(window).width();
+                if (tam >= 800) {
+                    $("header").show();
+                    $("#header2").hide();
+                } else {
+                    $("header").hide();
+                    $("#header2").show();
+                }
+
+                if (tam >= 950) { //quando a largura tamanho minimo, muda a posição da label
+                    $(".etiqueta").css("text-align", "end")
+                } else {
+                    $(".etiqueta").css("text-align", "center")
+                }
+            });
+        });
+
+
+        function VerificaCPF() { //VALIDAÇÃO CPF
+            strCpf = document.getElementById('cpf').value;
+            var soma = 0;
+            var resto;
+            var valido = 0;
+            if (strCpf == "00000000000" || strCpf.length != 11) {
+                alert("CPF Inválido");
+                return false;
+            }
+            for (i = 1; i <= 9; i++) {
+                soma = soma + parseInt(strCpf.substring(i - 1, i)) * (11 - i);
+            }
+
+            resto = soma % 11;
+            if (resto == 10 || resto == 11 || resto < 2) {
+                resto = 0;
+            } else {
+                resto = 11 - resto;
+            }
+
+            if (resto != parseInt(strCpf.substring(9, 10))) {
+                console.log(strCpf);
+                return false;
+            }
+
+            soma = 0;
+            for (i = 1; i <= 10; i++) {
+                soma = soma + parseInt(strCpf.substring(i - 1, i)) * (12 - i);
+            }
+
+            resto = soma % 11;
+            if (resto == 10 || resto == 11 || resto < 2) {
+                resto = 0;
+            } else {
+                resto = 11 - resto;
+            }
+
+            if (resto != parseInt(strCpf.substring(10, 11))) {
+                alert("CPF Inválido");
+                return false;
+            }
+            return true;
+        };
+
+        function idade() { //VALIDAÇÃO DE IDADE
+            diaNasc = document.getElementById("diaNasc").value
+            console.log(diaNasc)
+
+            mesNasc = document.getElementById("mesNasc").value
+            console.log(mesNasc)
+
+            anoNasc = document.getElementById("anoNasc").value
+            console.log(anoNasc)
+
+            var dataAtual = new Date,
+                anoAtual = dataAtual.getFullYear()
+            mesAtual = dataAtual.getMonth() + 1
+            diaAtual = dataAtual.getDate()
+            console.log(anoAtual)
+            console.log(mesAtual)
+            console.log(diaAtual)
+            // anoNasc = +ano_aniversario,
+            // mesNas = +mes_aniversario,
+            // diaNas = +dia_aniversario,
+
+            var idadeAtual = anoAtual - anoNasc
+
+            if (mesAtual < mesNasc || mesAtual == mesNasc && diaAtual < diaNasc) {
+                idadeAtual--;
+            }
+
+            console.log(idadeAtual)
+
+            if (idadeAtual <= 0 || idadeAtual > 130) {
+                alert("Idade informada é inválida")
+            }
+        }
+
+
+        $(document).ready(function () {//FUNÇÕES PARA ATIVAR E DESATIVAR AS ABAS DO FORMULARIO
+            //quando clica em uma aba a div dela aparece e as outras desaparecem e muda a cor da aba
+            $("#abaSus, #botaoSus").click(function () {
+                $("#sus").show();
+                $("#pessoal, #covid").hide();
+                $("#abaSus").css("background-color", "#d5f3c0");
+                $("#abaPessoal, #abaCovid").css("background-color", "#b4b4b4c0");
+            });
+
+            $("#abaCovid, #botaoCovid").click(function () {
+                $("#covid").show();
+                $("#pessoal, #sus").hide();
+                $("#abaCovid").css("background-color", "#d5f3c0");
+                $("#abaPessoal, #abaSus").css("background-color", "#b4b4b4c0");
+            });
+
+            $("#abaPessoal").click(function () {
+                $("#pessoal").show();
+                $("#sus, #covid").hide();
+                $("#abaPessoal").css("background-color", "#d5f3c0");
+                $("#abaSus, #abaCovid").css("background-color", "#b4b4b4c0");
+            });
+
+            
+            $("input*").focus(function(){//INPUT - QUANDO CLICA CINZA, QUANDO SAI BRANCO
+                $(this).css("background-color", "#cccccc");
+            });
+            $("input*").blur(function(){
+                $(this).css("background-color", "#ffffff");
+            });
+            
+
+            $("#dialog").dialog({// DIALOG - JQUERY UI
+                autoOpen: false,
+                width: 400,
+                buttons: [
+                    {
+                        text: "Ok",
+                        click: function () {
+                            $(this).dialog("close");
+                        }
+                    },
+                    {
+                        text: "Cancel",
+                        click: function () {
+                            $(this).dialog("close");
+                        }
+                    }
+                ]
+            });
+            
+            $("#dialog-link").click(function (event) {
+                $("#dialog").dialog("open");
+                event.preventDefault();
+            });
+
+
+            // SE SEXO FEMININO HABILITA O GESTANTE
+            $('#sex').change(function () {
+                var sexo = ($(this).val());
+                if (sexo != 1) {
+                    $('#gestante').prop("disabled", true);
+                }
+                else {
+                    $('#gestante').prop("disabled", false);
+                }
+            });
+
+            //BARRA DE PROGRESSO
+            //divs uma do lado da outra escondidas, quando muda de campo e ele não é vazio, a div é exibida
+            $("#nome").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div1").show();
+                }
+            });
+
+            $("#cpf").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div2").show();
+                }
+            });
+
+            $("#anoNasc").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div3").show();
+                }
+            });
+
+            $("#sex").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div4").show();
+                }
+            });
+
+            $("#etnia").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div5").show();
+                }
+            });
+
+            $("#cartaoSus").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div6").show();
+                }
+            });
+
+            $("#vacinaCovid").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div7").show();
+                }
+            });
+
+            $("#prof").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div8").show();
+                }
+            });
+
+            $("#peso").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div9").show();
+                }
+            });
+
+            $("#altura").change(function () {
+                if (($(this).val()) != null) {
+                    $("#div10").show();
+                }
+            });
+
+        });
+
+
+
+        function imc() { //CALCULA IMC
+            var peso = $("#peso").val();
+            var altura = $("#altura").val();
+
+            peso = parseFloat(peso);
+            altura = parseFloat(altura);
+
+            var imc = peso / (altura * altura);
+
+            if (imc < 18.5) {
+                $("#resultadoImc").text(`IMC = ${imc.toFixed(2)} (abaixo do peso)`);
+            } else if (imc >= 18.5 && imc < 25) {
+                $("#resultadoImc").text(`IMC = ${imc.toFixed(2)} (peso ideal)`);
+            } else if (imc >= 25 && imc < 30) {
+                $("#resultadoImc").text(`IMC = ${imc.toFixed(2)} (sobrepeso)`);
+            } else if (imc >= 30 && imc < 40) {
+                $("#resultadoImc").text(`IMC = ${imc.toFixed(2)} (obesidade)`);
+            } else if (imc >= 40) {
+                $("#resultadoImc").text(`IMC = ${imc.toFixed(2)}. (Obesidade grau 3 - Se enquadra em pessoa com comorbidades)`)
+            } else {
+                $("#resultadoImc").text(`digite o peso e altura`)
+            }
+
+        }
+
+
+        //FUNÇÃO DO BOTÃO
+        function cadastro() { 
+            //VARIAVEIS USADAS PARA DEFINIR A FASE
+            var cadEtnia = $("#etnia").val(); //ETINIA
+            console.log(cadEtnia)
+
+            var idade = 2021 - document.getElementById("anoNasc").value //IDADE
+            console.log(idade)
+
+            var cadProf = $("#prof").val(); //PROFISSAO
+            console.log(cadProf)
+
+            var cadComorbidade = $("input[name=comorbidades]"); //COMORBIDADES
+            if ((cadComorbidade).is(':checked')) {
+                cadComorbidade = 1;
+                console.log(cadComorbidade)
+            };
+
+            var cadGestante = $("input[name=gestante]"); //GESTANTE
+            if ((cadGestante).is(':checked')) {
+                cadGestante = 1;
+                console.log(cadGestante)
+            };
+
+            if (cadEtnia == 3 || idade >= 75 || cadProf == 1) { //fase1: indígena, mais de 75 anos, trabalhador saude
+                $("#dados").text("FASE 1 DA VACINAÇÃO")
+            }
+            else if ((idade >= 60 && idade < 75) || cadProf == 2 || cadProf == 3 || cadProf == 4) { //fase 2: entre 60 e 75 anos, segurança, penitenciaria e educação
+                $("#dados").text("FASE 2 DA VACINAÇÃO")
+            }
+
+            else if (cadComorbidade == 1 || cadProf == 5 || cadProf == 6 || cadGestante == 1) { //fase 3: comorbidades, metro/ferro, gravidas
+                $("#dados").text("FASE 3 DA VACINAÇÃO")
+            }
+
+            else if (cadProf == 7 || cadProf == 8) { //fase 4: motoristas e cobradores
+                $("#dados").text("FASE 4 DA VACINAÇÃO")
+            }
+
+            else {
+                $("#dados").text("FASE DE VACINAÇÃO NÃO DEFINIDA")
+            }
+
+
+        }
+
+        //BOTOES ACESSIBILIDADE
+        $(document).ready(function () {
+            var x = 20;
+
+            $("#aumenta").click(function () {
+                if (x < 23) {
+                    x = x + 1;
+                    $("body, li").css({ "font-size": x + "px" });
+                }
+            });
+            $("#diminui").click(function () {
+                if (x >= 17) {
+                    x = x - 1;
+                    $("body, li").css({ "font-size": x + "px" });
+                }
+            });
+
+            $("#aumenta1").click(function () {
+                if (x < 23) {
+                    x = x + 1;
+                    $("body, li").css({ "font-size": x + "px" });
+                }
+            });
+            $("#diminui1").click(function () {
+                if (x >= 17) {
+                    x = x - 1;
+                    $("body, li").css({ "font-size": x + "px" });
+                }
+            });
+        })
+
+
+        // Função para exibir data e hora do sistema nas paginas
+        function dataHora() {
+            let hoje = new Date()
+            let hora = hoje.getHours()
+            let minuto = hoje.getMinutes()
+            if (minuto < 10) {
+                minuto = "0" + minuto
+            }
+            let segundo = hoje.getSeconds()
+            if (segundo < 10) {
+                segundo = "0" + segundo
+            }
+
+            let dia = hoje.getDate()
+            if (dia < 10) {
+                dia = "0" + dia
+            }
+            let mes = (hoje.getMonth()) + 1
+            if (mes < 10) {
+                mes = "0" + mes
+            }
+            let ano = hoje.getFullYear()
+
+            document.getElementById('hora').innerHTML = (hora + ":" + minuto + ":" + segundo);
+            setTimeout('dataHora()', 1000)
+            document.getElementById('data').innerHTML = (dia + "/" + mes + "/" + ano);
+        }
+
+    </script>
+
+</body>
+
+</html>

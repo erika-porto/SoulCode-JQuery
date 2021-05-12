@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="erika,luiza,marta,nuria e tamires">
+    <title>Combate ao COVID</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/atualizacoes.css">
+    <link rel="stylesheet" href="css/css_menu.css">
+    <script src="js/js_menu.js"></script>
+    <script src="js/atualizacoes.js"></script>
+
+
+</head>
+
+<!------------------------Header---------------------------------->
+
+<body onload="dataHora()">
+    <header>
+        <img src="imagens/logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li class="itemMenu"><a href="index.html">Home</a></li>
+                <li class="itemMenu"><a href="info.html">Informações</a></li>
+                <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+                <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+                <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+            </ul>
+        </nav>
+        <div id="horaData">
+            <span id="data"></span>
+            <span id="hora"></span>
+        </div>
+        <div id="acessibilidade">
+            <button id="aumenta">+</button>
+            <button id="diminui">-</button>
+        </div>
+    </header>
+
+    <div id="header2">
+        <img src="logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li class="itemMenu"><a href="index.html">Home</a></li>
+                <li class="itemMenu"><a href="info.html">Informações</a>
+                </li>
+                <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+                <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+                <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+            </ul>
+        </nav>
+        <div id="horaData">
+            <span id="data"></span>
+            <span id="hora"></span>
+        </div>
+        <div id="acessibilidade2">
+            <button id="aumenta1">+</button>
+            <button id="diminui1">-</button>
+        </div>
+    </div>
+    <!-------Divs que indicam a situacao de sao paulo do dia 03/05/21-->
+
+    <main>
+        <section id="containerMaior">
+            <section id="containeratual">
+                <div id="atualSp">
+                    <h1>Situação atual da ocupação de leitos UTI e Enfermaria</h1>
+                    <h2>Estado de São Paulo no dia 03/05/2021</h2>
+                </div>
+                <div id="atualUti">
+                    <h3>Número de ocupação de leitos UTI</h3>
+                    <h4 id="h4um">10.107 Internados na UTI</h4>
+                </div>
+                <div id="atualEnfermaria">
+                    <h3>Número de ocupação de leitos Enfermaria</h3>
+                    <h4 id="h4dois">11.074 Internados na Enfermaria</h4>
+                </div>
+                <div id="atualFase">
+                    <h3>Média da taxa de ocupação </h3>
+                    <h4 id="h4tres">78,2% = fase laranja</h4>
+                </div>
+
+                <!----------------------Calculo da fase que o estado de sao paulo esta ---------------------->
+
+            </section>
+            <div id="container">
+                <section id="calculeUti">
+                    <label for="leitouti">Digite:</label>
+                    <input type="text" name="leitosUti" id="leitosUti">
+                    <h3>Porcentagem de ocupação leito UTI</h3>
+                    <p>Taxa de ocupação:<span id="resultadoUti"></span></p>
+                </section>
+                <section id="calculeEnfermaria">
+                    <label for="leitoenfermaria">Digite</label>
+                    <input type="text" name="leitosEnfermaria" id="leitosEnfermaria">
+                    <h3>Porcentagem de ocupação de leitos de Enfermagem</h3>
+                    <p>Media:<span id="resultadoEnfermaria"></span></p>
+            </div> 
+        </section>
+        <script>
+        
+           $(document).ready(function(){
+               var leitosUti,leitosEnfermaria,media;
+               
+               $("#leitosUti").blur(function(){
+                   leitosUti=$("#leitosUti").val();
+                  
+
+                   console.log(leitosUti)
+               });
+               $("#leitosEnfermaria").blur(function(){
+                   leitosEnfermaria=$("#leitosEnfermaria").val();
+                   console.log(leitosEnfermaria)
+
+                  media=(parseInt(leitosUti)+parseInt(leitosEnfermaria))/2;
+                   $("#resultadoEnfermaria").text(media);
+                   console.log(media);
+               
+               if (media <= 59) {
+                    $("#faseVerde h3").slideDown();
+                    $("header").css("background-color", "#93ec93");
+                    $("#calculeEnfermaria,#calculeUti").css("background-color", "#93ec93")
+                    console.log("verde");
+
+                }  if (media >= 60 && media <= 69) {
+                    $("#faseAmarela h3").slideDown();
+                    $("header").css("background-color", "#dddd58");
+                    $("#calculeEnfermaria,#calculeUti").css("background-color", "#dddd58");
+
+                } if (media >= 70 && media <= 79) {
+                    $("#faseLaranja h3").slideDown();
+                    $("header").css("background-color", "orange");
+                    $("#calculeEnfermaria,#calculeUti").css("background-color", "orange") 
+
+                    console.log("laranja");
+                }  if (media >= 80) {
+                    $("#faseVermelha h3").slideDown();
+                    $("header").css("background-color", "#e44a4a");
+                    $("#calculeEnfermaria,#calculeUti").css("background-color", "#e44a4a")
+                    console.log("vermelha");
+                }
+               
+               })
+           });
+        
+        </script>
+        </section>
+
+        <!---tabela indicativa da fase de abertura de comercios-->
+
+        <section id="tabela">
+            <div id="comercio">
+                <h2>Abertura de setores da economia/Fase</h2>
+                <h3>Espaços públicos</h3>
+                <h3>Ativ.Imobiliárias</h3>
+                <h3>Concessionárias</h3>
+                <h3>Escritórios</h3>
+                <h3>Bares/restaurantes</h3>
+                <h3>Comércio</h3>
+                <h3>Salão de Beleza</h3>
+                <h3>Academia</h3>
+                <h3>Teatro,cinemas</h3>
+                <h3>Eventos esportivos</h3>
+                <h3>Educação</h3>
+                <h3>Transporte</h3>
+            </div>
+            <div id="faseVermelha">
+                <h2>Fase Vermelha<br>
+                    Clique
+                </h2>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>A ser definido</h3>
+            </div>
+            <div id="faseLaranja">
+                <h2>Fase Laranja<br>
+                    Clique
+                </h2>
+                <h3>X</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>X</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>A ser definido</h3>
+            </div>
+            <div id="faseAmarela">
+                <h2>Fase Amarela<br>
+                    Clique
+                </h2>
+                <h3>X</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>A ser definido</h3>
+            </div>
+            <div id="faseVerde">
+                <h2>Fase Verde<br>
+                    Clique
+                </h2>
+                <h3>X</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>Restrições</h3>
+                <h3>X</h3>
+                <h3>X</h3>
+                <h3>A ser definido</h3>
+            </div>
+            <div id="faseAzul">
+                <h2>Fase Azul<br>
+                    Clique
+                </h2>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>Aberto</h3>
+                <h3>A ser definido</h3>
+            </div>
+        </section>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>Desenvolvido por:Erika,Nuria,Marta,Tamires e Luiza. copyright 2021</p>
+    </footer>
+
+</body>
+<!-------------Alunas:Luiza, Tamires, Erika, Nuria e Marta ------------------->
+
+</html>

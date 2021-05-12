@@ -1,0 +1,163 @@
+/* CSS MENU */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Zilla Slab', serif;
+  
+}
+#site{
+    width: 100%;
+    background-color: #e0ecd4;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100px;
+    background-color: #b8dba1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 4px 0px 10px;
+}
+
+#logo{
+    height: 110px;
+    margin-left: 0;
+}
+
+header li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.itemMenu {
+    margin: 0 20px 0 20px;
+}
+header a, #header2 a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+header a:hover,  #header2 a:hover {
+    color: #fff;
+    transition: 0.4s;
+}
+
+
+#acessibilidade{
+    display: grid;
+    gap: 5px;
+}
+
+#aumenta, #diminui, #aumenta1, #diminui1  {
+    height: 25px;
+    width: 25px;
+    background: #000;
+    border: transparent;
+    color: #fff;
+    font-weight: 900;
+    border-radius: 50%;
+}
+
+/* CSS MENU 2 */
+#header2{
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100px;
+    background-color: #b8dba1;
+    box-shadow: 4px 0px 10px;
+}
+#header2 li {
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+    list-style: none;
+    padding: 8px;
+}
+
+#acessibilidade2{
+    display: flex;
+    margin-left: 25px;
+    gap: 5px;
+}
+
+/* CSS RODAPÉ */
+footer {
+    width: 100%;
+    height: 70px;
+    background-color: #b8dba1;
+    text-align: center;
+    box-shadow: 0px 0px 10px;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+/* CSS MAIN */
+
+main {
+    margin: auto;
+    width: 80%;
+    display: grid;
+    align-items: center;
+    gap: 20px;
+}
+
+#titulo{
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+#titulo img {
+    width: 250px;
+}
+
+h2{
+    margin-top: 15px;
+}
+
+#pOutro{
+    text-align: justify;
+   margin-top: 10px;
+}
+
+#info {
+    display: flex; 
+    gap: 20px;
+}
+
+#prev, #transm, #sint{
+    width: 350px;
+    height: 250px;
+    background: #b8dba1;    
+}
+
+#titPrev, #titTransm, #titSint {
+    margin-top: 120px;
+    text-align: center;
+}
+
+#listPrev, #listTransm, #listSint{
+    display: none;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.imagens{
+    margin-bottom: 30px;
+    display: grid;
+    justify-content: center;
+}
+
+.imagens img {
+    height: 120px;
+    margin: 7px;
+    box-shadow: -2px 2px 2px #000;
+}

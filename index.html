@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script type="text/javascript" src="js/js_menu.js"></script>
+    <script type="text/javascript" src="js/js_index.js"></script>
+    <link rel="stylesheet" href="css/css_index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+
+    <title>Combate ao COVID</title>
+</head>
+
+<body onload="dataHora()">
+    <header>
+        <img src="imagens/logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li class="itemMenu"><a href="index.html">Home</a></li>
+                <li class="itemMenu"><a href="info.html">Informações</a></li>
+                <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+                <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+                <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+            </ul>
+        </nav>
+        <div id="horaData">
+            <span id="data"></span>
+            <span id="hora"></span>
+        </div>
+        <div id="acessibilidade">
+            <button id="aumenta">+</button>
+            <button id="diminui">-</button>
+        </div>
+    </header>
+
+    <div id="header2">
+        <img src="imagens/logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li class="itemMenu"><a href="index.html">Home</a></li>
+                <li class="itemMenu"><a href="info.html">Informações</a></li>
+                <li class="itemMenu"><a href="quemsomos.html">Quem Somos</a></li>
+                <li class="itemMenu"><a href="form.html">Cadastro</a></li>
+                <li class="itemMenu"><a href="atualizacoes.html">Atualizações</a></li>
+            </ul>
+        </nav>
+        <div id="horaData">
+            <span id="data"></span>
+            <span id="hora"></span>
+        </div>
+        <div id="acessibilidade2">
+            <button id="aumenta1">+</button>
+            <button id="diminui1">-</button>
+        </div>
+    </div>
+
+    <main>
+        <div>
+            <div id="titulo">
+                <h1>#VacinaJá</h1>
+                <img src="imagens/vacina.png" alt="">
+            </div>
+            <div id="">
+                <h2>Covid-19</h2>
+                <p id="pOutro">
+                    A Covid-19 é uma infecção respiratória aguda causada pelo coronavírus SARS-CoV-2, potencialmente
+                    grave, de elevada transmissibilidade e de distribuição global.
+                </p>
+                <p id="pOutro">
+                    O SARS-CoV-2 é um betacoronavírus descoberto em amostras de lavado broncoalveolar obtidas de
+                    pacientes com pneumonia de causa desconhecida na cidade de Wuhan, província de Hubei, China, em
+                    dezembro de 2019. Pertence ao subgênero Sarbecovírus da família Coronaviridae e é o sétimo
+                    coronavírus conhecido a infectar seres humanos.
+                </p>
+                <p id="pOutro">
+                    Os coronavírus são uma grande família de vírus comuns em muitas espécies diferentes de animais,
+                    incluindo o homem, camelos, gado, gatos e morcegos. Raramente os coronavírus de animais podem
+                    infectar pessoas e depois se espalhar entre seres humanos como já ocorreu com o MERS-CoV e o
+                    SARS-CoV-2. Até o momento, não foi definido o reservatório silvestre do SARS-CoV-2.
+                </p>
+            </div>
+        </div>
+        <h2>Saiba mais</h2>
+        <div id="info">
+            <div id="prev">
+                <h2 id="titPrev">Prevenção</h2>
+                <ul id="listPrev">
+                    <li>Distanciamento social</li>
+                    <li>Higienização das mãos</li>
+                    <li>Uso de máscaras</li>
+                    <li>Cobrir nariz e boca com lenço de papel ou com o antebraço, e nunca com as mãos ao tossir ou
+                        espirrar.</li>
+                    <li>Evitar tocar olhos, nariz e boca com as mãos não lavadas.</li>
+                    <li>Evitar abraços, beijos e apertos de mãos.</li>
+                    <li>Não compartilhar objetos de uso pessoal.</li>
+                    <li>Evitar aglomerações.</li>
+                </ul>
+            </div>
+            <div id="transm">
+                <h2 id="titTransm">Transmissão</h2>
+                <ul id="listTransm">
+                    <li>Contato pessoal</li>
+                    <li>Contato com objetos ou superfícies contaminadas, seguido de contato com a boca, nariz ou olhos.
+                    </li>
+                    <li>Gotículas de saliva</li>
+                    <li>Transmissão aérea em locais mal ventilados</li>
+                    <li>Compartilhamento de objetos</li>
+                </ul>
+            </div>
+            <div id="sint">
+                <h2 id="titSint">Sintomas</h2>
+                <ul id="listSint">
+                    <li>Assintomático</li>
+                    <li>Febre</li>
+                    <li>Tosse seca</li>
+                    <li>Cansaço</li>
+                    <li>Dores e desconfortos</li>
+                    <li>Dor de garganta</li>
+                    <li>Diarreia</li>
+                    <li>Conjuntivite</li>
+                    <li>Dor de cabeça</li>
+                    <li>Perda de paladar ou olfato</li>
+                    <li>Dificuldade de respirar ou falta de ar</li>
+                    <li>Dor ou pressão no peito</li>
+                    <li>Perda de fala ou movimento</li>
+                </ul>
+            </div>
+        </div>
+        <h2>Veja como foi a campanha de vacinação</h2>
+        <div class="imagens">
+            <div id="imagens1">
+                <img id="img1" src="imagens/VacinaCovid1.jpg">
+                <img id="img2" src="imagens/VacinaCovid2.jpg">
+                <img id="img3" src="imagens/VacinaCovid3.jpg">
+                <img id="img4" src="imagens/VacinaCovid4.jpg">
+                <img id="img5" src="imagens/VacinaCovid5.jpg">
+            </div>
+            <div id="imagens2">
+                <img id="img6" src="imagens/VacinaCovid6.jpg">
+                <img id="img7" src="imagens/VacinaCovid7.jpg">
+                <img id="img8" src="imagens/VacinaCovid8.jpg">
+                <img id="img9" src="imagens/VacinaCovid9.jpg">
+                <img id="img10" src="imagens/VacinaCovid10.jpg">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Érica , Luiza, Marta, Nurya, Thamiris </p><br>
+        <p>Copyright 2021</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+ #containerMaior {
+     font-size: 18px;
+     box-shadow: gray 0.500rem 0.500rem 0.500rem;
+ }
+
+ /*--------Container Atual-------*/
+
+ #containeratual {
+     display: flex;
+     flex-wrap: wrap;
+     margin-top: 3.33rem;
+
+ }
+
+ /*-----------informacoes de sao paulo------*/
+ #atualSp {
+
+     width: 70%;
+     height: 5rem;
+      font-size: 18px; 
+     font-family: 'Zilla Slab', serif;
+     margin-top: 3.33rem;
+     margin: 0 auto;
+     box-shadow: rgb(189, 247, 189) 0.312rem 0.312rem 0.312rem;
+
+ }
+
+ /*------------divs situacao atual de sao paulo------------*/
+
+ #atualUti,
+ #atualEnfermaria,
+ #atualFase {
+     width: 28%;
+     height: 10rem;
+     font-family: 'Zilla Slab', serif;
+     text-align: center;
+     margin: 1.25rem;
+     margin-top: 3.0rem;
+     padding: 0.450rem;
+     border-radius: 0.625rem;
+     box-shadow: gray 0.500rem 0.500rem 0.500rem;
+
+
+ }
+
+ /*-----------estilos particular das divs sao paulo(cores e fontes)--------*/
+
+ #atualUti,
+ #atualEnfermaria {
+     background-color: rgb(184, 219, 161);
+ }
+
+ #atualFase {
+     background-color: rgb(250, 195, 93);
+     align-content: center;
+ }
+
+ h3 {
+     /* font-size: 2rem; */
+     font-weight: 400;
+ }
+
+ h4 {
+     /* font-size: 2rem; */
+     font-weight: 800;
+
+ }
+
+ /*-------------divs do calculo da fase-------*/
+
+ #container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     background-color: cornsilk;
+     margin-top: 1.8rem;
+ }
+
+ #container p {
+     /* font-size: 2.5rem; */
+ }
+
+ #container label {
+     /* font-size: 2.5rem; */
+ }
+
+ #calculeUti,
+ #calculeEnfermaria {
+     width: 30%;
+     height: 10rem;
+     /* font-size: 1rem; */
+     padding: 2.5rem;
+     margin: 1.25rem;
+     border-radius: 0.625rem;
+     background-color: rgb(224, 224, 219);
+     box-shadow: gray 0.500rem 0.500rem 0.500rem;
+
+
+ }
+
+ #container h3 {
+     /* font-size:1.5rem; */
+     margin-top: 1rem;
+
+ }
+
+ #leitosUti,
+ #leitosEnfermaria {
+     height: 2rem;
+     width: 50%;
+     border-radius: 0.300rem;
+ }
+
+
+
+
+ /*--------------- tabela---------*/
+ /*tamanho das divs*/
+ #tabela {
+     display: flex;
+     flex-wrap: wrap;
+     margin: 0.8rem;
+     margin-top: 1.8rem;
+ }
+
+ #tabela div {
+     box-sizing: content-box;
+     width: 15%;
+     display: grid;
+     grid-auto-rows: auto;
+     font-family: 'Zilla Slab', serif;
+     text-align: center;
+     margin: 0.5rem;
+     border-radius: 0.625rem;
+     box-shadow: gray 0.500rem 0.500rem 0.500rem;
+
+ }
+
+ #tabela h3 {
+     /* font-size: 1.50rem; */
+     border-bottom: 0.125rem solid gray;
+     background-color: cornsilk;
+     margin-top: 0.625rem;
+ }
+
+ #tabela h2 {
+     font-size: 20px;
+     font-weight: 500;
+     height: 5rem;
+ }
+
+ /*-------tabela comercio-----*/
+
+
+ #comercio h2 {
+     /* font-size: 1.5rem; */
+     background-color: rgb(224, 224, 219);
+     border-radius: 0.625rem;
+
+ }
+
+ /*------tabela vermelha-----*/
+
+ #faseVermelha {
+     background-color: #e44a4a;
+     height: 5rem;
+ }
+
+ #faseVermelha h3,
+ #faseLaranja h3,
+ #faseAmarela h3,
+ #faseVerde h3,
+ #faseAzul h3 {
+     display: none;
+ }
+
+ /*-------tabela laranja-----*/
+ #faseLaranja {
+     background-color: #f89d2e;
+     height: 5rem;
+ }
+
+ /*-------tabela amarela------*/
+ #faseAmarela {
+     background-color: #dddd58;
+     height: 5rem;
+ }
+
+ /*--------tabela verde------*/
+ #faseVerde {
+     background-color: #93ec93;
+     height: 5rem;
+ }
+
+ /*---------tebal azul---------*/
+ #faseAzul {
+     background-color: #8fc4e5;
+     height: 5rem;
+ }
